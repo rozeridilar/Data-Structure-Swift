@@ -115,3 +115,13 @@ execTime = BenchTimer.measureBlock {
 
 print(execTime)
 
+func lengthyTask(completionHandler: (Int) -> Int)
+{
+    let result = completionHandler(42)
+    print(result)
+}
+
+lengthyTask(completionHandler: { number in
+    
+    return 101
+})
