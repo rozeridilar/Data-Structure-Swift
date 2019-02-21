@@ -9,11 +9,8 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
     if n == 0{
         return 0
     }
-    
     let mappedItems = ar.map { ($0, 1) }
-    
     let counts = Dictionary(mappedItems, uniquingKeysWith: +)
-    
     for dic in counts{
         if(dic.value>1){
          
@@ -21,7 +18,6 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
             count = count + Int(val/2)
         }
     }
-    
     return count
 }
 
