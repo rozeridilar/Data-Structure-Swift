@@ -42,7 +42,7 @@ func sum(_ array: [Int]) -> Int{
 //Array Sum
 let arr100 = generateRandomArray(size: 100, maxValue: UInt32.max)
 var execTime = BenchTimer.measureBlock {
-    sum(arr100)
+    arr100.reduce(0, +)
 }
 
 print("arr100  \(execTime)")
