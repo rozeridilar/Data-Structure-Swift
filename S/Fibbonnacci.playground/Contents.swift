@@ -25,5 +25,10 @@ func createFibonnacciArrWithLoop(_ n: Int) -> [Int] {
 
 print(createFibonnacciArrWithLoop(10))
 
+func createFibonnacciArrWithRecursion(_ n: Int) -> Int {
+    guard n > 1 else { return n }
+    return createFibonnacciArrWithRecursion(n-1) + createFibonnacciArrWithRecursion(n-2)
+}
 
 
+print(createFibonnacciArrWithRecursion(10))
