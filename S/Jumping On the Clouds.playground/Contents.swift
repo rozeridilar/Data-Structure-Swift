@@ -2,7 +2,6 @@ import Foundation
 
 // Complete the jumpingOnClouds function below.
 func jumpingOnClouds(c: [Int]) -> Int {
-    
     var count = 0
     var i = 0
     while i<c.count-1 {

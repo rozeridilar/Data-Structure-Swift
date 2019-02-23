@@ -12,6 +12,7 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
     let mappedItems = ar.map { ($0, 1) }
     let counts = Dictionary(mappedItems, uniquingKeysWith: +)
     for dic in counts{
+        
         if(dic.value>1){
          
             var val = dic.value
@@ -24,8 +25,14 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
 
 print(sockMerchant(n: 9, ar: [10, 20, 20, 10, 10, 30, 50, 10, 20]))
 
+func ss(n: Int, ar: [Int]) -> Void{
+ let objectSet = Set(ar.map { $0})
+    print("in object set")
+    print(objectSet)
+    print("out object set")
+}
 
-
+print(ss(n: 9, ar: [10, 20, 20, 10, 10, 30, 50, 10, 20]))
 //func sockMerchant(n: Int, ar: [Int]) -> Int {
 //    var count:Int = 0
 //    if n == 0{
