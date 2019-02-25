@@ -1,6 +1,6 @@
 import Foundation
 
-struct Pair<T1,T2>{
+struct Pair<T1: Comparable,T2: Comparable>{
     var first: T1
     var second: T2
 }
