@@ -1,14 +1,14 @@
 import Foundation
 
 func equilibrium(_ numbers: [Int]) -> [Int]?{
-
+    
     guard numbers.count > 1 else{
         return nil
     }
     var indices = [Int]()
     var left = 0
     var right = 0
-
+    
     var count = numbers.count
     
     for i in 1..<count{
@@ -32,7 +32,7 @@ func equilibrium(_ numbers: [Int]) -> [Int]?{
 
 //reduce -> O(n)
 func equilibriumOptimized(_ numbers: [Int]) -> [Int]?{
-
+    
     var indices = [Int]()
     
     var leftSum = 0
