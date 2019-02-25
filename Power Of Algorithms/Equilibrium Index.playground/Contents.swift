@@ -55,4 +55,9 @@ func equilibriumOptimized(_ numbers: [Int]) -> [Int]?{
     
 }
 
-print(equilibriumOptimized([-3,2,-2,1,-2]))
+if let array = equilibriumOptimized([-3,2,-2,1,-2]){
+    print(array)
+}else{
+    print("There is no equilibrium index")
+}
+
