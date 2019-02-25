@@ -28,4 +28,31 @@ func equilibrium(_ numbers: [Int]) -> [Int]?{
     return indices.isEmpty ? nil: indices
 }
 
-print(equilibrium([-3,2,-2,1,-2]))
+//print(equilibrium([-3,2,-2,1,-2]))
+
+//reduce -> O(n)
+func equilibriumOptimized(_ numbers: [Int]) -> [Int]?{
+
+    var indices = [Int]()
+    
+    var leftSum = 0
+    var sum = numbers.reduce(0, +)
+    let count = numbers.count
+    
+    for i in 0..<count{
+        print("current sum \(sum)")
+        
+        sum = sum - numbers[i]
+        
+        if(leftSum == sum){
+            indices.append(i)
+        }
+        
+        leftSum = leftSum + numbers[i]
+    }
+    
+    return indices.isEmpty ? nil : indices
+    
+}
+
+print(equilibriumOptimized([-3,2,-2,1,-2]))
