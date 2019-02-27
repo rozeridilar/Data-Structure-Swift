@@ -1,6 +1,8 @@
 import Foundation
 
 
+//typealias
+
 //brute-force approach
 //linear time complexity
 //O(n)
