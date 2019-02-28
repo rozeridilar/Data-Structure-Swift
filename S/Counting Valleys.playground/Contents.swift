@@ -26,6 +26,7 @@ func countingValleys(n: Int, s: String) -> Int {
 }
 
 #!/bin/sh
+git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Rozeri Dilar'; GIT_AUTHOR_EMAIL='rozeri.dilar@gmail.com'; GIT_COMMITTER_NAME='Rozeri Dilar'; GIT_COMMITTER_EMAIL='rozeri.dilar@gmail.com';" HEAD
 
 
 
