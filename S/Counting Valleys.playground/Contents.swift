@@ -25,5 +25,7 @@ func countingValleys(n: Int, s: String) -> Int {
     
 }
 
+#!/bin/sh
+
 
 
