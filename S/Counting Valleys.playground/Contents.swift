@@ -3,30 +3,35 @@ import Foundation
 // Complete the countingValleys function below.
 func countingValleys(n: Int, s: String) -> Int {
     
-    let mappedArr = s.map{($0,1)}
-    
-    let dict = Dictionary(mappedArr, uniquingKeysWith: +)
+//    let mappedArr = s.map{($0,1)}
+//    
+//    let dict = Dictionary(mappedArr, uniquingKeysWith: +)
     
     var sum = 0
+    var count = 0
     
-    for (key,value) in dict{
+    let arr = s.map { String($0) }
+  
+    
+    for i in 0..<arr.count {
+        let key = arr[i]
         if key == "U"{
-            print(key)
-            print(value)
-            sum += -1 * value
+            sum += 1
         }else{
-            print(key)
-            print(value)
-            sum += 1 * value
+            sum -= 1
         }
+        print("sum: \(sum)")
+        if(i != s.count-1){
+        count = sum == 0 ? count + 1 : count
+        }
+        print("count \(count)")
     }
     
-    return sum == 0 ? 1 : sum
+    return count
     
 }
 
-#!/bin/sh
-git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Rozeri Dilar'; GIT_AUTHOR_EMAIL='rozeri.dilar@gmail.com'; GIT_COMMITTER_NAME='Rozeri Dilar'; GIT_COMMITTER_EMAIL='rozeri.dilar@gmail.com';" HEAD
+print(countingValleys(n: 10, s: "DUDDDUUDUU"))
 
 
 
