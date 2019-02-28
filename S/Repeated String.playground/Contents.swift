@@ -16,8 +16,12 @@ func repeatedString(s: String, n: Int) -> Int {
             return 0
         }
     }
-   
-    var stringToSearch = repeater(string: s, withNumber: n)
+
+    let sCount = s.count
+    var countToDivide = Int(n/s.count)
+    print("Count to Divide: \(countToDivide)")
+    var stringToSearch = String(repeating: s, count: countToDivide+s.count)
+    print(stringToSearch.count)
     let index = stringToSearch.index(stringToSearch.startIndex, offsetBy: n)
     let myWholeSubstring = stringToSearch[..<index]
     print(myWholeSubstring.count)
@@ -42,16 +46,5 @@ func repeatedString(s: String, n: Int) -> Int {
         $1 == "a" ? $0 + 1 : $0
     }
 }
-func repeater(string: String, withNumber number: Int) -> String {
-    var repeatedString = String()
-    for i in 0..<number {
-        if(string.count<number){
-            repeatedString += string
-        }
-        else{
-            break
-        }
-    }
-    return repeatedString
-}
-print(repeatedString(s: "abcd", n: 10))
+
+print("result: \(repeatedString(s: "aab", n: 882787))")
