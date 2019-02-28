@@ -26,3 +26,7 @@ func countingValleys(n: Int, s: String) -> Int {
 }
 
 print(countingValleys(n: 12, s: "DDUUDDUDUUUD"))
+
+
+
+
