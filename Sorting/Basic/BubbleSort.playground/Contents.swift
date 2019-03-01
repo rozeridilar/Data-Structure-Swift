@@ -6,14 +6,14 @@ func bubbleSort(_ input: [Int]) -> [Int]{
     }
     
     var result = input
-    var count = result.count
+    let count = result.count
     
     var isSwapped = false
     repeat{
         isSwapped = false
         for index in 1..<count{
-            if resul[index] < result[index-1]{
-                swap(&result[index-1], &result[index])
+            if result[index] < result[index-1]{
+                result.swapAt(index-1, index)
                 isSwapped = true
             }
         }
@@ -22,3 +22,5 @@ func bubbleSort(_ input: [Int]) -> [Int]{
     return result
     
 }
+
+print(bubbleSort([1,2,3,5,4]))
