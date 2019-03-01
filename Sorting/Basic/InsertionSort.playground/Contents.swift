@@ -1,10 +1,6 @@
 import Foundation
 
 func insertionSort(_ input:[Int]) -> [Int]{
-    guard input.count > 1 else{
-        return input
-    }
-    
     var result = input
     let count = result.count
     
