@@ -76,5 +76,6 @@ do{
         print(ownersString)
     }
 }catch{
-    
+    print("Failed to encode the cat owner with error \(error.localizedDescription)")
+
 }
