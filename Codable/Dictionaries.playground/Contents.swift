@@ -1,11 +1,11 @@
 import UIKit
 
 /* Decode Array of Dictionaries with possible nesting */
-
+let name = "Rozeri"
 let catOwnerJsonData = """
 [
 {
-   "name":"Rozeri",
+   "name":"\(name)",
    "age":25,
    "cats":[
       {
