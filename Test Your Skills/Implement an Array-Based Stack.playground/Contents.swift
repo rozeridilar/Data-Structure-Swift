@@ -20,6 +20,14 @@ import Foundation
 struct Stack<Element> {
     var items = [Element]()
     
+    var count: Int {
+        return items.count
+    }
+    
+    var isEmpty: Bool {
+        return items.isEmpty
+    }
+    
     mutating func push(_ item: Element) {
         items.append(item)
     }
@@ -43,3 +51,4 @@ stackOfStrings.push("dos")
 stackOfStrings.push("tres")
 stackOfStrings.push("cuatro")
 let fromTheTop = stackOfStrings.pop()
+print(stackOfStrings.count)
