@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GestureRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="docs" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-jU-NfP">
+                                <rect key="frame" x="10" y="30" width="148" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="9ld-5g-gwB"/>
+                                    <constraint firstAttribute="height" constant="142" id="ma5-cD-RiE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recycle-bin" translatesAutoresizingMaskIntoConstraints="NO" id="T6e-zh-8ih">
+                                <rect key="frame" x="217" y="515" width="148" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="Kwp-Ip-gJL"/>
+                                    <constraint firstAttribute="width" constant="148" id="cRI-Oo-6qD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.22775607640000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f4m-jU-NfP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="blh-Aa-Cz4"/>
+                            <constraint firstItem="f4m-jU-NfP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="i3k-8M-S8d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T6e-zh-8ih" secondAttribute="bottom" constant="10" id="ibn-S1-KGZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T6e-zh-8ih" secondAttribute="trailing" constant="10" id="z3W-ze-55E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="fileImageView" destination="f4m-jU-NfP" id="NwU-DB-IWH"/>
+                        <outlet property="trashImageView" destination="T6e-zh-8ih" id="btp-ud-cWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="docs" width="128" height="128"/>
+        <image name="recycle-bin" width="128" height="128"/>
+    </resources>
+</document>
