@@ -43,6 +43,11 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                     self.fileImageView.alpha = 0.0
                 }
+            }else{
+                UIView.animate(withDuration: 0.3) {
+                    self.fileImageView.frame.origin = self.fileViewOrigin
+                }
+                
             }
         default:
             break
