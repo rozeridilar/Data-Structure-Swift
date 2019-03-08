@@ -17,11 +17,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         addPanGesture(view: fileImageView)
-        fileViewOrigin = fileImageView.frame.origin
         
+        fileViewOrigin = fileImageView.frame.origin
         view.bringSubviewToFront(fileImageView)
     }
 
@@ -32,8 +31,6 @@ class ViewController: UIViewController {
     
     @objc func handlePan(_ sender: UIPanGestureRecognizer){
         let fileView = sender.view
-     
-        
         switch sender.state {
         case .began,.changed:
             moveViewWithPan(view: fileView!, sender: sender)
@@ -47,7 +44,6 @@ class ViewController: UIViewController {
         default:
             break
         }
-        
     }
     
     func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer){
