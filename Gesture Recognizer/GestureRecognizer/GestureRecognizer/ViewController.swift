@@ -32,6 +32,16 @@ class ViewController: UIViewController {
         let fileView = sender.view
         let translation = sender.translation(in: view)
         
+        switch sender.state {
+        case .began,.changed:
+            fileView?.center = CGPoint(x: fileView!.center.x + translation.x, y: fileView!.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: view)
+        case .ended:
+            break
+        default:
+            break
+        }
+        
     }
 
 }
