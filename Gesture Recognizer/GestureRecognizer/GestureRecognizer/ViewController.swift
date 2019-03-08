@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         
         addPanGesture(view: fileImageView)
         fileViewOrigin = fileImageView.frame.origin
+        
+        view.bringSubviewToFront(fileImageView)
     }
 
     func addPanGesture(view: UIView){
@@ -37,7 +39,11 @@ class ViewController: UIViewController {
             fileView?.center = CGPoint(x: fileView!.center.x + translation.x, y: fileView!.center.y + translation.y)
             sender.setTranslation(CGPoint.zero, in: view)
         case .ended:
-            break
+            if fileView!.frame.intersects(trashImageView.frame){
+                UIView.animate(withDuration: 0.3) {
+                    self.fileImageView.alpha = 0.0
+                }
+            }
         default:
             break
         }
