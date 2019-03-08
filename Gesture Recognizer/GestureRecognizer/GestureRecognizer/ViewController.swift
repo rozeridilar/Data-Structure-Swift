@@ -35,12 +35,7 @@ class ViewController: UIViewController {
         case .began,.changed:
             moveViewWithPan(view: fileView!, sender: sender)
         case .ended:
-            if fileView!.frame.intersects(trashImageView.frame){
-                deleteView(fileView!)
-            }else{
-              
-                putViewToOrigin(fileView!)
-            }
+            fileView!.frame.intersects(trashImageView.frame) ?  deleteView(fileView!) : putViewToOrigin(fileView!)
         default:
             break
         }
