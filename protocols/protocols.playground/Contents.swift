@@ -33,14 +33,15 @@ class Employee : Representable {
 //print(Employee(name: "Rozeri").represantation(asType: .JSON))
 
 protocol Cacheable{
+    //static var versionID: Double { get set }
     func flash()
 }
 
 class CacheableEmployee: Employee, Cacheable{
+   // static var versionID: Double
     func flash() {
         /**/
     }
-    
 }
 
 func doSomething(x: Representable & Cacheable){
@@ -49,3 +50,7 @@ func doSomething(x: Representable & Cacheable){
 }
 
 doSomething(x: CacheableEmployee(name: "Rozeri"))
+
+var names = ["Fred Flinstone","Wilma Flinstone","Barney Rubble","Betty Rubble"]
+let shortNames = names.filter{$0.contains("Flinstone")}.map{$0.prefix(5)}
+print(shortNames)
