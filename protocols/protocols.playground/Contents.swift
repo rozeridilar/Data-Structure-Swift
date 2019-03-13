@@ -30,4 +30,19 @@ class Employee : Representable {
     
 }
 
-print(Employee(name: "Rozeri").represantation(asType: .JSON))
+//print(Employee(name: "Rozeri").represantation(asType: .JSON))
+
+protocol Cacheable{
+    func flash()
+}
+
+class CacheableEmployee: Employee, Cacheable{
+    func flash() {
+        <#code#>
+    }
+    
+}
+
+func doSomething(x: Representable){
+    print(x.represantation(asType: .JSON))
+}
