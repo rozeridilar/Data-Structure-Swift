@@ -52,5 +52,5 @@ func doSomething(x: Representable & Cacheable){
 doSomething(x: CacheableEmployee(name: "Rozeri"))
 
 var names = ["Fred Flinstone","Wilma Flinstone","Barney Rubble","Betty Rubble"]
-let result = names.filter{$0.contains("Flinstone")}.map{$0.prefix(5)}.reduce("", {x,y in "\(x) \(y)"})
+let result = names.filter{$0.contains("Flinstone")}.map{$0.prefix(5)}.reduce("", {x,y in "\(x)\(y) "})
 print(result)
