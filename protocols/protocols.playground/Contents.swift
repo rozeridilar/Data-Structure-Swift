@@ -38,11 +38,14 @@ protocol Cacheable{
 
 class CacheableEmployee: Employee, Cacheable{
     func flash() {
-        <#code#>
+        /**/
     }
     
 }
 
-func doSomething(x: Representable){
+func doSomething(x: Representable & Cacheable){
     print(x.represantation(asType: .JSON))
+    x.flash()
 }
+
+doSomething(x: CacheableEmployee(name: "Rozeri"))
