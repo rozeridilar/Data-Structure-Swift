@@ -15,7 +15,7 @@ func checkMagazine(magazine: [String], note: [String]) -> Void {
             return
         }
         if dic.value > 1 {
-            for i in 0..<dic.value{
+            for _ in 0..<dic.value{
                 let firstCount = mag.count
                 mag = mag.filter { $0 != key}
                 let lastCount = mag.count
@@ -35,4 +35,4 @@ func checkMagazine(magazine: [String], note: [String]) -> Void {
    
      print ("\(mag.count >= 0 ? "Yes" : "No")")
 }
-print (checkMagazine(magazine: ["ive", "got","a", "lovely", "bunch", "of","coconuts"], note: ["Ive", "got","some","coconuts"]))
+checkMagazine(magazine: ["ive", "got","a", "lovely", "bunch", "of","coconuts"], note: ["Ive", "got","some","coconuts"])
