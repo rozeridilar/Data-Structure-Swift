@@ -1,9 +1,12 @@
 import UIKit
 
-enum Format {
-    case XML
-    case JSON
-}
+//Quick Arrays
+var names = ["Fred Flinstone","Wilma Flinstone","Barney Rubble","Betty Rubble"]
+let result = names.filter{$0.contains("Flinstone")}.map{$0.prefix(5)}.reduce("", {x,y in "\(x)\(y) "})
+print(result)
+
+//Protocols
+enum Format {case XML,JSON}
 
 protocol Representable{
     func represantation( asType: Format ) -> String
@@ -32,25 +35,41 @@ class Employee : Representable {
 
 //print(Employee(name: "Rozeri").represantation(asType: .JSON))
 
-protocol Cacheable{
-    //static var versionID: Double { get set }
-    func flash()
+protocol Cacheable: Representable{
+    static var versionID: Double { get set }
+    var objectID: String { get }
+    init()
+    func flush() -> String
+    mutating func load (flushId: String)
+    static func setTargets(to: OutputStream, from: InputStream)
 }
 
 class CacheableEmployee: Employee, Cacheable{
-   // static var versionID: Double
-    func flash() {
+    static var versionID = 1.2
+    static var idPool = 0
+    let myId = idPool + 1
+    var objectID: String {get{ return "CacheableEmployee Employee - \(CacheableEmployee.versionID) + -\(myId)"}}
+    required init() {
+        super.init(asType: .JSON, contents: "")
+    }
+    
+    required init(asType: Format, contents: String){
+     super.init(asType: asType, contents: contents)
+    }
+    
+    func flush() -> String {
+        /**/
+        return objectID
+    }
+    
+    func load(flushId: String) {
+        /**/
+    }
+    
+    static func setTargets(to: OutputStream, from: InputStream) {
         /**/
     }
 }
 
-func doSomething(x: Representable & Cacheable){
-    print(x.represantation(asType: .JSON))
-    x.flash()
-}
 
-doSomething(x: CacheableEmployee(name: "Rozeri"))
 
-var names = ["Fred Flinstone","Wilma Flinstone","Barney Rubble","Betty Rubble"]
-let result = names.filter{$0.contains("Flinstone")}.map{$0.prefix(5)}.reduce("", {x,y in "\(x)\(y) "})
-print(result)
