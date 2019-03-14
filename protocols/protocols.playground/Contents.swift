@@ -54,7 +54,7 @@ class CacheableEmployee: Employee, Cacheable{
     }
     
     required init(asType: Format, contents: String){
-     super.init(asType: asType, contents: contents)
+        super.init(asType: asType, contents: contents)
     }
     
     func flush() -> String {
@@ -71,5 +71,37 @@ class CacheableEmployee: Employee, Cacheable{
     }
 }
 
+class AnotherClassEmployee:Employee, Cacheable{
+    static var versionID: Double = 1.6
+    
+    var objectID: String{get{return "something"}}
+    
+    required init() {
+        super.init(asType: .JSON, contents: "")
+    }
+    
+    required init(asType: Format, contents: String){
+        super.init(asType: asType, contents: contents)
+    }
+    
+    func flush() -> String {
+        /**/
+        return objectID
+    }
+    
+    func load(flushId: String) {
+        /**/
+    }
+    
+    static func setTargets(to: OutputStream, from: InputStream) {
+        /**/
+    }
+    
+}
+
+print(CacheableEmployee.versionID)
+CacheableEmployee.versionID = 1.8
+print(CacheableEmployee.versionID)
+print(AnotherClassEmployee.versionID)
 
 
