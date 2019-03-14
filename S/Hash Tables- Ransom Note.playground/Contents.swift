@@ -9,14 +9,15 @@ func checkMagazine(magazine: [String], note: [String]) -> Void {
     let mappedItems = note.map{($0,1)}
     let counts = Dictionary(mappedItems, uniquingKeysWith: +)
     for dic in counts{
-        if !magazine.contains(dic.key){
+        let key = dic.key
+        if !magazine.contains(key){
             print("No")
             return
         }
         if dic.value > 1 {
             for i in 0..<dic.value{
                 let firstCount = mag.count
-                mag = mag.filter { $0 != dic.key}
+                mag = mag.filter { $0 != key}
                 let lastCount = mag.count
                 if firstCount - lastCount != dic.value{
                     result = "No"
@@ -26,7 +27,7 @@ func checkMagazine(magazine: [String], note: [String]) -> Void {
             }
         }else{
             //print(dic.key)
-            mag = mag.filter{($0 != dic.key)}
+            mag = mag.filter{($0 != key)}
             // print(mag)
         }
         
