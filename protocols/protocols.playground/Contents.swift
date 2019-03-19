@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 //Quick Arrays
 var names = ["Fred Flinstone","Wilma Flinstone","Barney Rubble","Betty Rubble"]
@@ -10,7 +10,7 @@ enum Format {case XML,JSON}
 
 protocol Representable{
     func represantation( asType: Format ) -> String
-    init(asType: Format, contents: String)
+    //init(asType: Format, contents: String)
 }
 
 class Employee : Representable {
@@ -33,7 +33,12 @@ class Employee : Representable {
     
 }
 
-//print(Employee(name: "Rozeri").represantation(asType: .JSON))
+print(Employee(name: "Rozeri").represantation(asType: .JSON))
+func doS(x: Representable){
+    print(x.represantation(asType: .JSON))
+}
+
+doS(x: Employee(name: "Rozeri"))
 
 protocol Cacheable: Representable{
     static var versionID: Double { get set }
@@ -52,20 +57,20 @@ class CacheableEmployee: Employee, Cacheable{
     required init() {
         super.init(asType: .JSON, contents: "")
     }
-    
+
     required init(asType: Format, contents: String){
         super.init(asType: asType, contents: contents)
     }
-    
+
     func flush() -> String {
         /**/
         return objectID
     }
-    
+
     func load(flushId: String) {
         /**/
     }
-    
+
     static func setTargets(to: OutputStream, from: InputStream) {
         /**/
     }
@@ -73,30 +78,30 @@ class CacheableEmployee: Employee, Cacheable{
 
 class AnotherClassEmployee:Employee, Cacheable{
     static var versionID: Double = 1.6
-    
+
     var objectID: String{get{return "something"}}
-    
+
     required init() {
         super.init(asType: .JSON, contents: "")
     }
-    
+
     required init(asType: Format, contents: String){
         super.init(asType: asType, contents: contents)
     }
-    
+
     func flush() -> String {
         /**/
         return objectID
     }
-    
+
     func load(flushId: String) {
         /**/
     }
-    
+
     static func setTargets(to: OutputStream, from: InputStream) {
         /**/
     }
-    
+
 }
 
 print(CacheableEmployee.versionID)
