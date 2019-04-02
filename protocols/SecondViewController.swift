@@ -9,9 +9,9 @@
 import UIKit
 
 
-class SecondViewController: UIViewController {
 
-    
+
+class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,11 +21,13 @@ class SecondViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-
+            let name = Notification.Name(rawValue: darkNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil)
             dismiss(animated: true, completion: nil)
             break
         case 2:
-
+            let name = Notification.Name(rawValue: lightNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil)
             dismiss(animated: true, completion: nil)
             break
         default:
