@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Base Screen-->
+        <!--View Controller-->
         <scene sceneID="BDc-3F-YkP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avb-hU-Lep" sceneMemberID="firstResponder"/>
-                <viewController id="jtf-Rf-1Tk" customClass="BaseScreen" customModule="Delegates_Protocols" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jtf-Rf-1Tk" customClass="ViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lq5-rL-f55"/>
                         <viewControllerLayoutGuide type="bottom" id="arz-gD-IAf"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="302" y="197"/>
         </scene>
-        <!--Selection Screen-->
+        <!--Second View Controller-->
         <scene sceneID="cvo-xN-xTc">
             <objects>
-                <viewController storyboardIdentifier="SelectionScreen" id="Nws-ke-yjm" customClass="SelectionScreen" customModule="Delegates_Protocols" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectionScreen" id="Nws-ke-yjm" customClass="SecondViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ee7-UF-Mx9"/>
                         <viewControllerLayoutGuide type="bottom" id="0ca-w8-ebU"/>
