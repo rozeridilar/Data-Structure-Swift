@@ -8,13 +8,10 @@
 
 import UIKit
 
-protocol SideSelectionDelegate {
-    func didTapChoice(image: UIImage, name: String, color: UIColor)
-}
 
 class SecondViewController: UIViewController {
 
-var selectionDelegate: SideSelectionDelegate!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +22,13 @@ var selectionDelegate: SideSelectionDelegate!
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            selectionDelegate.didTapChoice(image: UIImage(named: "vader")!, name: "Darth Vader", color: .red)
+            let name = Notification.Name(rawValue: lightNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil)
             dismiss(animated: true, completion: nil)
             break
         case 2:
-            selectionDelegate.didTapChoice(image: UIImage(named: "luke")!, name: "Luke Skywalker", color: .cyan)
+            let name = Notification.Name(rawValue: darkNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil)
             dismiss(animated: true, completion: nil)
             break
         default:
