@@ -26,16 +26,11 @@ class ViewController: UIViewController {
     //MARK: Actions
     @IBAction func chooseButtonTapped(_ sender: Any) {
         let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
-        secondVC.selectionDelegate = self
         present(secondVC, animated: true, completion: nil)
     }
     
 }
-extension ViewController: SideSelectionDelegate{
-    func didTapChoice(image: UIImage, name: String, color: UIColor) {
-        mainImageView.image = image
-        nameLabel.text = name
-        self.view.backgroundColor = color
-    }
-}
+//extension ViewController: SideSelectionDelegate{
+//
+//}
 
