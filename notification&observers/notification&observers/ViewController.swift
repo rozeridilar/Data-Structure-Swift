@@ -27,7 +27,8 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     @IBAction func chooseButtonTapped(_ sender: Any) {
-        
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC")
+        present(secondVC!, animated: true, completion: nil)
     }
     
 }

@@ -14,7 +14,7 @@
         <scene sceneID="BDc-3F-YkP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avb-hU-Lep" sceneMemberID="firstResponder"/>
-                <viewController id="jtf-Rf-1Tk" customClass="ViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jtf-Rf-1Tk" customClass="ViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lq5-rL-f55"/>
                         <viewControllerLayoutGuide type="bottom" id="arz-gD-IAf"/>
@@ -82,7 +82,7 @@
         <!--Second View Controller-->
         <scene sceneID="cvo-xN-xTc">
             <objects>
-                <viewController storyboardIdentifier="SelectionScreen" id="Nws-ke-yjm" customClass="SecondViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nws-ke-yjm" customClass="SecondViewController" customModule="notification_observers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ee7-UF-Mx9"/>
                         <viewControllerLayoutGuide type="bottom" id="0ca-w8-ebU"/>
@@ -101,21 +101,27 @@
                                 <color key="textColor" red="0.97812938689999995" green="0.89030045270000002" blue="0.31347513199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mql-XJ-3WG">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mql-XJ-3WG">
                                 <rect key="frame" x="112.5" y="178.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Nyy-uw-T9F"/>
                                     <constraint firstAttribute="width" constant="150" id="QGU-o3-fP4"/>
                                 </constraints>
                                 <state key="normal" image="imperial"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Nws-ke-yjm" eventType="touchUpInside" id="vEq-4S-kc1"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elg-NH-ylT">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elg-NH-ylT">
                                 <rect key="frame" x="112.5" y="374" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="FtA-tF-B7O"/>
                                     <constraint firstAttribute="width" constant="150" id="idK-9N-ZO9"/>
                                 </constraints>
                                 <state key="normal" image="rebel"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Nws-ke-yjm" eventType="touchUpInside" id="a4Q-zj-isP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

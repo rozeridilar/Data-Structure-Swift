@@ -16,7 +16,19 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            dismiss(animated: true, completion: nil)
+            break
+        case 2:
+            dismiss(animated: true, completion: nil)
+            break
+        default:
+            break
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
