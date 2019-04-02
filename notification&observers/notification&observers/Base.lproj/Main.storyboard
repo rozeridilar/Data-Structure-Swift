@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" secondItem="jTh-E8-3f2" secondAttribute="height" multiplier="16:9" id="y87-Ig-skh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdt-Fk-htv">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdt-Fk-htv" customClass="RoundedButton" customModule="notification_observers" customModuleProvider="target">
                                 <rect key="frame" x="57.5" y="550" width="260" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -41,6 +41,12 @@
                                 <state key="normal" title="Choose a Side">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.74510893489999996" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseButtonTapped:" destination="jtf-Rf-1Tk" eventType="touchUpInside" id="HOz-vC-I1K"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-qB-0ps">
                                 <rect key="frame" x="20" y="320" width="335" height="59"/>
@@ -64,6 +70,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="98O-J4-fU9"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="Pdt-Fk-htv" id="iaA-Cr-Tr0"/>
+                        <outlet property="mainImageView" destination="jTh-E8-3f2" id="aue-Sg-vEi"/>
+                        <outlet property="nameLabel" destination="Bcd-qB-0ps" id="JNo-Fx-4vT"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="302" y="197"/>

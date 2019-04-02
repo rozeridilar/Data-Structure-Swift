@@ -13,6 +13,7 @@
 		DD16555D22532D4A00D6AB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD16555C22532D4A00D6AB63 /* Assets.xcassets */; };
 		DD16556022532D4A00D6AB63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD16555E22532D4A00D6AB63 /* LaunchScreen.storyboard */; };
 		DD16556822532F4000D6AB63 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16556722532F4000D6AB63 /* SecondViewController.swift */; };
+		DD16556B2253329A00D6AB63 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD16556A2253329A00D6AB63 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DD16555F22532D4A00D6AB63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD16556122532D4A00D6AB63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD16556722532F4000D6AB63 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../../protocols/SecondViewController.swift; sourceTree = "<group>"; };
+		DD16556A2253329A00D6AB63 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		DD16555422532D4900D6AB63 /* notification&observers */ = {
 			isa = PBXGroup;
 			children = (
+				DD1655692253327E00D6AB63 /* View */,
 				DD16555522532D4900D6AB63 /* AppDelegate.swift */,
 				DD16555722532D4900D6AB63 /* ViewController.swift */,
 				DD16555922532D4900D6AB63 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				DD16556122532D4A00D6AB63 /* Info.plist */,
 			);
 			path = "notification&observers";
+			sourceTree = "<group>";
+		};
+		DD1655692253327E00D6AB63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD16556A2253329A00D6AB63 /* RoundedButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				DD16556822532F4000D6AB63 /* SecondViewController.swift in Sources */,
 				DD16555822532D4900D6AB63 /* ViewController.swift in Sources */,
 				DD16555622532D4900D6AB63 /* AppDelegate.swift in Sources */,
+				DD16556B2253329A00D6AB63 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
